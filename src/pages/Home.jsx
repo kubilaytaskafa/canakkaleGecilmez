@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/Header";
 import map from "../images/savasHaritasi.jpg";
 import Heroes from "../components/Heroes";
+import Gallery from "../components/Gallery";
+import ScrollToTopButton from "../components/ScrollToUp";
 const Home = () => {
   return (
     <>
@@ -107,7 +109,7 @@ const Home = () => {
           className="w-full flex flex-col items-center justify-center "
         >
           <article className="w-full flex justify-center items-center text-center ">
-            <h1 className="lg:text-6xl font-bold text-primary">
+            <h1 className="lg:text-6xl text-2xl font-bold text-primary">
               Çanakkale Kahramanları
             </h1>
           </article>
@@ -115,7 +117,22 @@ const Home = () => {
             <Heroes />
           </article>
         </section>
+
+        <section
+          id="gallery"
+          className="w-full flex flex-col items-center justify-center mt-12 "
+        >
+          <article className="w-full flex justify-center items-center text-center ">
+            <h1 className="lg:text-6xl text-2xl font-bold text-primary">
+              Çanakkale Savaşı Galeri
+            </h1>
+          </article>
+          <article className="w-full flex justify-center items-center gap-4 mt-10">
+            <Gallery />
+          </article>
+        </section>
       </main>
+      <ScrollToTopButton />
     </>
   );
 };

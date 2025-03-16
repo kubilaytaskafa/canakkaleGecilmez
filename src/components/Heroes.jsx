@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 
 const Heroes = () => {
   const heroes = useSelector((state) => state.heroes.heroes);
-  console.log(heroes);
+
   return (
     <div className="w-full flex items-center justify-center flex-wrap gap-6 mt-8">
       {heroes &&
         heroes.map((hero) => (
           <div
             key={hero.id}
-            className="w-96 lg:h-[500px]  bg-white rounded-lg shadow-xl flex items-center justify-start flex-col gap-4 p-4 hover:scale-105 transition duration-300"
+            className="w-96 lg:h-[550px]  bg-white rounded-lg shadow-xl flex items-center justify-start flex-col gap-4 p-4 hover:scale-105 transition duration-300"
           >
             <img src={hero.image} alt="" className="w-full" />
 

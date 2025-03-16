@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import ataturk from "../../images/MustafaKemalAtatürk.webp";
 import seyitOnbasi from "../../images/seyitOnbasi.jpg";
 import enverPasa from "../../images/enverPasa.jpg";
-import halilKutPasa from "../../images/halilKutPasa.jpeg";
+import elliyedinciAlay from "../../images/57.alay.webp";
 import kahramanMehmetcik from "../../images/canakkaleAsker.webp";
 
 const initialState = {
@@ -24,17 +24,17 @@ const initialState = {
 
     {
       id: 3,
-      name: "Halil Bey (Halil Kut Paşa)",
-      description:
-        "Çanakkale’deki kara savunmasında gösterdiği liderlik ve cesaretle tanındı. Çeşitli zaferlere imza atarak Türk ordusunun direncini artırdı.",
-      image: halilKutPasa,
-    },
-    {
-      id: 4,
       name: "İsmail Enver Paşa",
       description:
         "Çanakkale Savaşı'nda Osmanlı İmparatorluğu’nun genelkurmay başkanı olarak önemli bir rol oynadı ve Türk ordusunun stratejisini belirlemede etkin oldu.",
       image: enverPasa,
+    },
+    {
+      id: 4,
+      name: "57.Alay",
+      description:
+        "Alay, Çanakkale Savaşı sırasında Türk askerlerinin gösterdiği büyük kahramanlıkla tanınan bir askeri birimdir. 1915 yılında Gelibolu Yarımadası'nda, Anafartalar ve Conkbayırı'nda İtilaf Devletleri'ne karşı şiddetli çatışmalara katılmıştır. Alay, özellikle 57. Alay Komutanı Yarbay Hasan Rıza Bey’in liderliğinde büyük bir direniş sergileyerek, düşman ilerleyişine karşı kahramanca savaşmıştır.",
+      image: elliyedinciAlay,
     },
     {
       id: 5,

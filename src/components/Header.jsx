@@ -17,25 +17,25 @@ const Header = () => {
             Anasayfa
           </a>
           <a
-            href="#history"
+            href="/#history"
             className="text-white pr-4 text-xl hover:text-red-400 transition duration-300"
           >
             Tarihçe
           </a>
           <a
-            href="#heroes"
+            href="/#heroes"
             className="text-white pr-4 text-xl hover:text-red-400 transition duration-300"
           >
             Kahramanlarımız
           </a>
           <a
-            href="#gallery"
+            href="/#gallery"
             className="text-white pr-4 text-xl hover:text-red-400 transition duration-300"
           >
             Galeri
           </a>
           <a
-            href="#canakkalegecilmez"
+            href="/#canakkalegecilmez"
             className="text-white pr-4 text-xl hover:text-red-400 transition duration-300"
           >
             Çanakkale Geçilmez!
