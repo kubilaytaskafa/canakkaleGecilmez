@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  #home {
-    background: url("./images/canakkaleAsker.webp");
-    background-size: cover;
-    background-position: center;
-  }
 }
 
 @layer base {

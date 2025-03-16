@@ -5,13 +5,16 @@ import Heroes from "../components/Heroes";
 import Gallery from "../components/Gallery";
 import ScrollToTopButton from "../components/ScrollToUp";
 import Hero from "../components/Hero";
+import HeroQuotes from "../components/HeroQuotes";
+import Footer from "../components/Footer";
+import DropdownMenu from "../components/DropdownMenu";
 const Home = () => {
   return (
     <>
       <header>
         <Header />
       </header>
-      <main>
+      <main id="home">
         <section className="w-full flex items-center justify-center mt-20 lg:h-[600px] relative">
           <Hero />
         </section>
@@ -112,7 +115,23 @@ const Home = () => {
             <Gallery />
           </article>
         </section>
+        <section
+          id="canakkalegecilmez"
+          className="w-full flex flex-col items-center justify-center mt-12 "
+        >
+          <article className="w-full flex justify-center items-center text-center ">
+            <h1 className="lg:text-6xl text-2xl font-bold text-primary">
+              Çanakkale Savaşı İle İlgili Sözler
+            </h1>
+          </article>
+          <article className="w-full flex justify-center items-center gap-4 mt-10">
+            <HeroQuotes />
+          </article>
+        </section>
       </main>
+      <footer className="w-full flex items-center justify-center">
+        <Footer />
+      </footer>
       <ScrollToTopButton />
     </>
   );

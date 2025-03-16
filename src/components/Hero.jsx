@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
-import kahramanMehmetcik from "../images/canakkaleAsker.webp";
-import ataturkVeMehmetcik from "../images/ataturkVeMehmetcik.jpeg";
-import elliyedinciAlay from "../images/57.alay.webp";
+
 import cephe from "../images/canakkaleSavas.jpg";
+import cepheiki from "../images/cepheiki.webp";
+import ataturkCephe from "../images/ataturkCephe.webp";
 
 const Hero = () => {
   const [changeBackground, setChangeBackground] = useState(0);
 
-  const images = [
-    kahramanMehmetcik,
-    ataturkVeMehmetcik,
-    elliyedinciAlay,
-    cephe,
-  ];
+  const images = [ataturkCephe, cephe, cepheiki];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,7 +23,7 @@ const Hero = () => {
   return (
     <article
       id="home"
-      className="w-full lg:h-[1000px] h-[450px] flex items-center justify-center p-24 bg-cover bg-center relative  lg:mt-24"
+      className="w-full lg:h-[1000px] h-[450px] flex items-center justify-center p-12 bg-cover bg-center relative  "
       style={{
         backgroundImage: `url(${images[changeBackground]})`,
         backgroundPosition: "center",

@@ -10,7 +10,7 @@ const Heroes = () => {
         heroes.map((hero) => (
           <div
             key={hero.id}
-            className="w-96 lg:h-[550px]  bg-white rounded-lg shadow-xl flex items-center justify-start flex-col gap-4 p-4 hover:scale-105 transition duration-300"
+            className="w-96 lg:h-[550px]  bg-white rounded-lg shadow-xl flex items-center justify-start flex-col gap-4 p-4 hover:shadow-2xl transition duration-300"
           >
             <img src={hero.image} alt="" className="w-full" />
 

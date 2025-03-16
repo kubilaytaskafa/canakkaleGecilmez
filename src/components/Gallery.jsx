@@ -3,12 +3,16 @@ import kahramanMehmetcik from "../images/canakkaleAsker.webp";
 import ataturkVeMehmetcik from "../images/ataturkVeMehmetcik.jpeg";
 import elliyedinciAlay from "../images/57.alay.webp";
 import cephe from "../images/canakkaleSavas.jpg";
+import cepheiki from "../images/cepheiki.webp";
+import ataturkCephe from "../images/ataturkCephe.webp";
 const Gallery = () => {
   const images = [
     kahramanMehmetcik,
     ataturkVeMehmetcik,
     elliyedinciAlay,
     cephe,
+    cepheiki,
+    ataturkCephe,
   ];
   return (
     <div className="w-full flex items-center justify-center flex-wrap gap-4 p-4">
