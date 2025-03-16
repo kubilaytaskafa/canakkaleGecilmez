@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #home {
+    background: url("./images/canakkaleAsker.webp");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@layer base {
+  /* Scroll davranışını optimize et */
+  html {
+    scroll-behavior: smooth; /* Yumuşak kaydırma */
+    overscroll-behavior: contain; /* Aşırı kaydırmayı engelle */
+  }
+
+  body {
+    overflow-x: hidden; /* Yatay kaydırmayı engelle */
+    touch-action: manipulation; /* Dokunma hareketlerini optimize et */
+  }
+
+  /* iOS için özel düzeltme */
+  @supports (-webkit-touch-callout: none) {
+    html {
+      scroll-behavior: auto; /* iOS'ta smooth-scroll'u kapat */
+    }
+    body {
+      -webkit-overflow-scrolling: touch; /* iOS için doğal kaydırma */
+      overflow-y: scroll; /* Kaydırmayı aktif tut */
+    }
+  }
+
+  /* Scrollbar'ı özelleştirme (Sadece Webkit destekler) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ffff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b91c1c;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a38d72;
+  }
+}
