@@ -4,6 +4,7 @@ import map from "../images/savasHaritasi.jpg";
 import Heroes from "../components/Heroes";
 import Gallery from "../components/Gallery";
 import ScrollToTopButton from "../components/ScrollToUp";
+import Hero from "../components/Hero";
 const Home = () => {
   return (
     <>
@@ -12,31 +13,11 @@ const Home = () => {
       </header>
       <main>
         <section className="w-full flex items-center justify-center mt-20 lg:h-[600px] relative">
-          <article
-            id="home"
-            className="w-full h-full flex items-center justify-center p-24 bg-cover bg-center relative"
-          >
-            {/* Opacity için Overlay (Kaplama) */}
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-            <div className="flex items-center justify-center gap-4 flex-col">
-              {/* İçerik */}
-              <h1 className="lg:text-4xl text-2xl text-center font-bold mb-4 text-white relative z-10">
-                Türk milletinin kahramanlık destanı
-              </h1>
-              <h1 className=" lg:text-2xl text-sm text-center font-bold mb-4 text-white relative z-10">
-                "Bu memleketin toprakları üstünde kanlarını döken kahramanlar!
-                Burada bir dost vatanın toprağındasınız. Huzur ve sükûn içinde
-                uyuyunuz."
-              </h1>
-              <h1 className="lg:text-2xl text-sm  font-bold mb-4 text-white relative z-10 text-right">
-                Mustafa Kemal Atatürk
-              </h1>
-            </div>
-          </article>
+          <Hero />
         </section>
         <section
           id="history"
-          className="flex items-center justify-center w-full flex-col  mt-16"
+          className="flex items-center justify-center w-full flex-col  lg:mt-64 mt-16"
         >
           <h1 className="lg:text-6xl text-2xl font-bold text-primary italic">
             Çanakkale Savaşı Tarihçesi
