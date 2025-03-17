@@ -1,21 +1,40 @@
-import { useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import music from "../audios/Hakan Aysev - Çanakkale Türküsü - (Official Audio).mp3";
-const VolumeToggle = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(new Audio(music));
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMusic } from "../redux/slices/musicSlice";
 
-  const toggleMusic = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
+const VolumeToggle = () => {
+  const dispatch = useDispatch();
+  const isPlaying = useSelector((state) => state.music.isPlaying); // Değişken düzeltildi
+  const audioRef = useRef(null);
+
+  // Component mount olduğunda ses nesnesini oluştur
+  useEffect(() => {
+    audioRef.current = new Audio(music);
+    return () => {
+      audioRef.current.pause(); // Component kaldırıldığında müziği durdur
+    };
+  }, []);
+
+  // isPlaying değiştiğinde müziği kontrol et
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current
+          .play()
+          .catch((err) => console.log("Müzik başlatılamadı:", err));
+      } else {
+        audioRef.current.pause();
+      }
     }
-    setIsPlaying(!isPlaying);
-  };
+  }, [isPlaying]);
 
   return (
-    <button onClick={toggleMusic} className="text-4xl text-gray-800">
+    <button
+      onClick={() => dispatch(toggleMusic())}
+      className="text-4xl text-gray-800"
+    >
       {isPlaying ? (
         <FaVolumeUp className="text-white text-xl hover:text-red-400 transition duration-300" />
       ) : (
