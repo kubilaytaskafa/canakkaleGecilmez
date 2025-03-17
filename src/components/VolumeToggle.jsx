@@ -6,27 +6,24 @@ import { toggleMusic } from "../redux/slices/musicSlice";
 
 const VolumeToggle = () => {
   const dispatch = useDispatch();
-  const isPlaying = useSelector((state) => state.music.isPlaying); // Değişken düzeltildi
-  const audioRef = useRef(null);
+  const isPlaying = useSelector((state) => state.music.isPlaying);
+  const audioRef = useRef(new Audio(music)); // Ses nesnesini burada oluştur
 
-  // Component mount olduğunda ses nesnesini oluştur
   useEffect(() => {
-    audioRef.current = new Audio(music);
+    const audio = audioRef.current;
     return () => {
-      audioRef.current.pause(); // Component kaldırıldığında müziği durdur
+      audio.pause();
+      audio.currentTime = 0; // Bileşen kaldırıldığında sıfırla
     };
   }, []);
 
-  // isPlaying değiştiğinde müziği kontrol et
   useEffect(() => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current
-          .play()
-          .catch((err) => console.log("Müzik başlatılamadı:", err));
-      } else {
-        audioRef.current.pause();
-      }
+    const audio = audioRef.current;
+
+    if (isPlaying) {
+      audio.play().catch((err) => console.log("Müzik başlatılamadı:", err));
+    } else {
+      audio.pause();
     }
   }, [isPlaying]);
 
