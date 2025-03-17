@@ -1,25 +1,25 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
-import music from "../audios/Hakan Aysev - Çanakkale Türküsü - (Official Audio).mp3";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMusic } from "../redux/slices/musicSlice";
+import music from "../audios/Hakan Aysev - Çanakkale Türküsü - (Official Audio).mp3";
+
+// Global bir ses nesnesi oluştur
+const audio = new Audio();
+audio.src = music;
 
 const VolumeToggle = () => {
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.music.isPlaying);
-  const audioRef = useRef(new Audio(music)); // Ses nesnesini burada oluştur
 
   useEffect(() => {
-    const audio = audioRef.current;
     return () => {
       audio.pause();
-      audio.currentTime = 0; // Bileşen kaldırıldığında sıfırla
+      audio.currentTime = 0;
     };
   }, []);
 
   useEffect(() => {
-    const audio = audioRef.current;
-
     if (isPlaying) {
       audio.play().catch((err) => console.log("Müzik başlatılamadı:", err));
     } else {

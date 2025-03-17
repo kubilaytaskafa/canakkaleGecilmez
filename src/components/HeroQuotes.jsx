@@ -36,7 +36,7 @@ const HeroQuotes = () => {
   }, []);
 
   return (
-    <div className="w-2/3  flex flex-col items-center justify-center bg-primary text-white p-6 relative rounded-lg shadow-xl mb-24">
+    <div className="w-2/3  flex flex-col items-center justify-center bg-primary text-white p-6 relative rounded-lg shadow-2xl mb-24 hover:scale-105 transition duration-300">
       <motion.div
         key={quotes[currentQuote].id} // Her değişimde key değiştirerek animasyon uygula
         initial={{ opacity: 0, y: 20 }}

@@ -117,14 +117,14 @@ const Home = () => {
         </section>
         <section
           id="canakkalegecilmez"
-          className="w-full flex flex-col items-center justify-center mt-12 "
+          className="w-full flex flex-col items-center justify-center mt-16 "
         >
           <article className="w-full flex justify-center items-center text-center ">
             <h1 className="lg:text-6xl text-2xl font-bold text-primary">
               Çanakkale Savaşı İle İlgili Sözler
             </h1>
           </article>
-          <article className="w-full flex justify-center items-center gap-4 mt-10">
+          <article className="w-full flex justify-center items-center gap-4 mt-16 mb-14">
             <HeroQuotes />
           </article>
         </section>
