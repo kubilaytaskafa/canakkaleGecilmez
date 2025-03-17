@@ -4,26 +4,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMusic } from "../redux/slices/musicSlice";
 import music from "../audios/Hakan Aysev - Çanakkale Türküsü - (Official Audio).mp3";
 
-// Global bir ses nesnesi oluştur
-const audio = new Audio();
-audio.src = music;
+// Tek bir ses nesnesi oluştur ve koru
+const globalAudio = new Audio(music);
 
 const VolumeToggle = () => {
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.music.isPlaying);
 
   useEffect(() => {
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, []);
-
-  useEffect(() => {
     if (isPlaying) {
-      audio.play().catch((err) => console.log("Müzik başlatılamadı:", err));
+      globalAudio
+        .play()
+        .catch((err) => console.log("Müzik başlatılamadı:", err));
     } else {
-      audio.pause();
+      globalAudio.pause();
     }
   }, [isPlaying]);
 
