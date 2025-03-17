@@ -30,7 +30,7 @@ const HeroQuotes = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuote((prev) => (prev + 1) % quotes.length);
-    }, 5000); // 5 saniyede bir değiştir
+    }, 10000); // 5 saniyede bir değiştir
 
     return () => clearInterval(interval);
   }, []);
